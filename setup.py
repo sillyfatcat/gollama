@@ -10,10 +10,10 @@ with open(long_desc_fd) as f:
     long_description = f.read()
 
 setup(
-    name='jackhanma',
+    name='gollama',
     version='0.0.1',
-    packages=['jackhanma'],
-    url='https://github.com/sillyfatcat/jackhanma',
+    packages=['gollama'],
+    url='https://github.com/sillyfatcat/gollama',
     license='MIT',
     author='Shelby Shum',
     author_email='sshum00@gmail.com',
@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=['golink', 'tinyurl', 'shorthand'],
-    download_url='https://github.com/sillyfatcat/jackhanma/archive/v0.1.tar.gz',
+    download_url='https://github.com/sillyfatcat/gollama/archive/v0.1.tar.gz',
     install_requires=[
         'django',
     ],
