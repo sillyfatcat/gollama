@@ -7,7 +7,8 @@
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                     <div class="form-group">
                         <label for="shorthand">Shorthand</label>
-                        <input type="text" name="shorthand" class="form-control" id="shorthand" aria-describedby="shorthandHelp"
+                        <input type="text" name="shorthand" class="form-control" id="shorthand"
+                               aria-describedby="shorthandHelp"
                                placeholder="Enter shorthand">
                         <small id="shorthandHelp" class="form-text text-muted">This is what users will type go/{your
                             shorthand}</small>
@@ -38,4 +39,5 @@
             </div>
         {% endfor %}
     </div>
+
 {% endblock %}
