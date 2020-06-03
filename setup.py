@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 path = os.path.dirname(__file__)
 long_desc_fd = os.path.join(path, 'README.md')
@@ -12,7 +12,7 @@ with open(long_desc_fd) as f:
 setup(
     name='gollama',
     version='0.0.1',
-    packages=['gollama'],
+    packages=find_packages(),
     url='https://github.com/sillyfatcat/gollama',
     license='MIT',
     author='Shelby Shum',

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="/" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    <div class="form-group">
+                        <label for="shorthand">Shorthand</label>
+                        <input type="text" name="shorthand" class="form-control" id="shorthand"
+                               aria-describedby="shorthandHelp"
+                               placeholder="Enter shorthand">
+                        <small id="shorthandHelp" class="form-text text-muted">This is what users will type go/{your
+                            shorthand}</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" name="url" class="form-control" id="url" aria-describedby="shorthandHelp"
+                               placeholder="Enter shorthand">
+                        <small id="shorthandHelp" class="form-text text-muted">This is where users will be redirected
+                            to</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+        {% for shorthand in shorthands %}
+            <div class="row" name="shorthand_row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="{{ shorthand.url }}">{{ shorthand.label }}</a>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ shorthand.label }} - {{ shorthand.url }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
