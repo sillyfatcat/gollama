@@ -9,5 +9,7 @@ class TestCreate(TestCase):
         self.client = Client()
 
     def test_creating_shorthand_from_url(self):
-        self.fail('todo')
+        self.assertFalse(ShortHand.objects.filter(url='http://bar.com', label='foo').exists())
+        response = self.client.post('/', {'shorthand': 'foo', 'url': 'http://bar.com'})
+        self.assertTrue(ShortHand.objects.filter(url='http://bar.com', label='foo').exists())
 

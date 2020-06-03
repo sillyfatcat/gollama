@@ -5,7 +5,6 @@ from backend.models import ShortHand
 
 
 def index(request):
-    print(request.POST)
     if request.method == 'POST' and (request.POST.get('shorthand') and request.POST.get('url')):
         ShortHand.objects.create(
             label=request.POST.get('shorthand'),
