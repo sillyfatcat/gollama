@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +11,8 @@
 {% block content %}
 {% endblock %}
 {% include 'static_js.html' %}
+<div class="bottom-image">
+    <img src="{% static 'img/gollama.png' %}">
+</div>
 </body>
 </html>
