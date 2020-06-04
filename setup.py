@@ -11,7 +11,7 @@ with open(long_desc_fd) as f:
 
 setup(
     name='gollama',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(),
     url='https://github.com/sillyfatcat/gollama',
     license='MIT',
@@ -30,7 +30,7 @@ setup(
         'Development Status :: 5 - Production/Stable',
         # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
         'Intended Audience :: Developers',
-         'Topic :: Internet/Name Service (DNS)',
+        'Topic :: Internet :: Name Service (DNS)',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
