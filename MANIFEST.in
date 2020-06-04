@@ -1,0 +1,4 @@
+recursive-include gollama/templates *.html
+recursive-include gollama/frontend/static/javascript *.js
+recursive-include gollama/frontend/static/css *.css
+recursive-include gollama/frontend/static/img *.png

@@ -24,12 +24,13 @@
                 </form>
             </div>
         </div>
+        <br/>
         {% for shorthand in shorthands %}
-            <div class="row" name="shorthand_row">
+            <div class="row shorthand-row" name="shorthand_row">
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ shorthand.url }}">{{ shorthand.label }}</a>
+                            <a class="card-text" href="{{ shorthand.url }}">go/{{ shorthand.label }}</a>
                         </div>
                         <div class="card-body">
                             <p class="card-text">{{ shorthand.label }} - {{ shorthand.url }}</p>

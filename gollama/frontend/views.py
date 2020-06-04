@@ -15,6 +15,15 @@ def index(request):
     return render(request, 'index.html', context={'shorthands': ShortHand.objects.all()})
 
 
-def reroute(request, shorthand):
+def reroute(request, shorthand, parameter=None):
     obj = get_object_or_404(ShortHand, label=shorthand)
-    return HttpResponsePermanentRedirect(obj.url)
+    url = obj.url
+    print(parameter, url)
+    if not parameter and '{}' in url:
+        url = url.split('{}')[0]
+    elif parameter:
+        if '{}' in url:
+            url = url.format(parameter)
+        else:
+            url = f'{url.rstrip("/")}/{parameter}'
+    return HttpResponsePermanentRedirect(url)
