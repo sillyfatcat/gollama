@@ -25,6 +25,15 @@ Edit local host file to resolve DNS `go` to `127.0.0.2:80`.
  * Mac: /private/etc/hosts
  * Linux: /etc/hosts
 
+Your `hosts` file should look something like this
+```
+...
+127.0.0.1 localhost # example
+127.0.0.2 go
+...
+```
+
+
 ```bash
 cd gollama
 python manage.py runserver 127.0.0.2:80
