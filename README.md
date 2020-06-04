@@ -53,6 +53,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [go/links](https://www.golinks.io/)
+* [go/links](https://www.golinks.io/), for hooking me up and never letting me go
 * [Ben](https://www.twitch.tv/taberif_), for debugging with me
 * [Maryann](https://www.twitch.tv/maryann), the Llama artist
