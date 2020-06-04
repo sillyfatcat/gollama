@@ -1,6 +1,6 @@
 # go/llama
 
-![alt text](https://github.com/sillyfatcat/gollama/tree/master/gollama/frontend/static/img/gollama.png?raw=true)
+![gollama](https://raw.githubusercontent.com/sillyfatcat/gollama/master/gollama/frontend/static/img/gollama.png)
 
 go/llama is an opensource solution to golinks often seen in tech companies. 
 I recently started working at a company that does not have support for golinks so I decided to write my own. 
