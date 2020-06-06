@@ -16,9 +16,13 @@ def index(request):
 
 
 def reroute(request, shorthand, parameter=None):
-    obj = get_object_or_404(ShortHand, label=shorthand)
+    qs = ShortHand.objects.filter(label=shorthand)
+    if not qs:
+        qs = ShortHand.objects.get_similar(shorthand)
+        return render(request, '404.html', status=404, context={'shorthand': shorthand, 'candidates': qs})
+
+    obj = qs.get()
     url = obj.url
-    print(parameter, url)
     if not parameter and '{}' in url:
         url = url.split('{}')[0]
     elif parameter:

@@ -25,7 +25,7 @@ SECRET_KEY = '9wrd5^!#c^qlrdp68t-$w+kd!3n(swuz4bfd2ig-qserp0l*eg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['go', ]
+ALLOWED_HOSTS = ['go', '127.0.0.2']
 
 
 # Application definition
@@ -121,5 +121,7 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
