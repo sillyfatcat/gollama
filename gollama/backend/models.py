@@ -32,6 +32,9 @@ class ShortHand(models.Model):
     url = models.URLField()
     objects = ShortHandManager()
 
+    class Meta:
+        ordering = ('-id',)
+
     def __str__(self):
         return f'{self.label} - {self.url}'
 

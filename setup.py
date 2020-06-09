@@ -24,6 +24,7 @@ setup(
     download_url='https://github.com/sillyfatcat/gollama/archive/v0.1.tar.gz',
     install_requires=[
         'django',
+        'djangorestframework',
         'textdistance',
     ],
     include_package_data=True,

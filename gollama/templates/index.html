@@ -29,12 +29,17 @@
             <div class="row shorthand-row" name="shorthand_row">
                 <div class="col">
                     <div class="card">
-                        <div class="card-header">
-                            <a class="card-text" href="{{ shorthand.url }}">go/{{ shorthand.label }}</a>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">{{ shorthand.label }} - {{ shorthand.url }}</p>
-                        </div>
+                        <form action="/" method="patch">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                            <input type="hidden" name="shorthand_id" value="{{ shorthand.id }}">
+                            <div class="card-header">
+                                <a class="card-text" href="{{ shorthand.url }}">go/{{ shorthand.label }}</a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ shorthand.label }} - {{ shorthand.url }}</p>
+                            </div>
+{#                            <button type="submit" class="btn btn-primary">Save</button>#}
+                        </form>
                     </div>
                 </div>
             </div>
