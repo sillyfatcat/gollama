@@ -21,7 +21,7 @@ def reroute(request, shorthand, parameter=None):
         qs = ShortHand.objects.get_similar(shorthand)
         return render(request, '404.html', status=404, context={'shorthand': shorthand, 'candidates': qs})
 
-    obj = qs.get()
+    obj = ShortHand.objects.get(label=shorthand)
     url = obj.url
     if not parameter and '{}' in url:
         url = url.split('{}')[0]
