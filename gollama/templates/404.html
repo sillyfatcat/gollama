@@ -5,10 +5,13 @@
         <h5>Would you like to <a href="/#new={{ shorthand }}">create go/{{ shorthand }}</a></h5>
     </div>
     <div class="container text-center">
-        <p class="text-center">Did you mean:</p>
-        {% for candidate in candidates %}
-            <div class="row"><a href="{{ candidate.url }}">go/{{ candidate.label }}</a></div>
-        {% endfor %}
+        {% if candidates %}
+            <p class="text-center">Did you mean:</p>
+            {% for candidate in candidates %}
+                <div class="row"><a href="{{ candidate.url }}">go/{{ candidate.label }}</a></div>
+            {% endfor %}
+        {% endif %}
     </div>
+
 
 {% endblock %}
