@@ -36,6 +36,7 @@ Your `hosts` file should look something like this
 
 ```bash
 cd gollama
+python manage.py migrate
 python manage.py runserver 127.0.0.2:80
 ```
 
