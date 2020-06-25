@@ -12,6 +12,26 @@ function get_hash_params() {
 }
 
 
+function set_event_listener() {
+    //change enter button to submit form
+
+    $('#shorthand,#url').keypress(function (event) {
+        if (event.key === "Enter") {
+            $('#create-button').click()
+        }
+    });
+
+    //create button
+    $('#create-button').on('click', function () {
+        $("#create-form").validate()
+        if ($('#shorthand').valid() && $('#url').valid()) {
+            post_shorthand({'label': $('#shorthand').val(), 'url': $('#url').val()}).done(() => {
+                location.reload()
+            })
+        }
+    })
+}
+
 $(document).ready(function () {
     $('#search').on('keyup', function (e) {
         if (e.which == 13) {
@@ -29,4 +49,6 @@ $(document).ready(function () {
         $('#shorthand').val(hash_params['new'])
         $('#url').focus()
     }
+
+    set_event_listener();
 });
