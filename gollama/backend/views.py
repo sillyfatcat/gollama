@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import ShortHand
+from .serializers import ShortHandSerializer
+
+
+class ShortHandViewSet(viewsets.ModelViewSet):
+    queryset = ShortHand.objects.all()
+    serializer_class = ShortHandSerializer
