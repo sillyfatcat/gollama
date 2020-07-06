@@ -19,7 +19,7 @@ python setup.py install
 
 ## Usage
 
-Edit local host file to resolve DNS `go` to `127.0.0.2:80`.
+Edit local host file to resolve DNS `go` to `127.0.0.2`.
 
  * Windows: C:\Windows\System32\drivers\etc\hosts
  * Mac: /private/etc/hosts
