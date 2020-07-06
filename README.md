@@ -40,6 +40,8 @@ python manage.py migrate
 python manage.py runserver 127.0.0.2:80
 ```
 
+NOTE: On macOS you will need to perform the following `sudo ifconfig lo0 alias 127.0.0.2 up` in order to add `127.0.0.2` to the loopback address. 
+
 Once this is setup `http://go` should route you to the home dashboard where you can create new links. 
 
 To  use these links just type `http://go/{SHORTHAND}`
