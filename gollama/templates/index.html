@@ -15,9 +15,9 @@
                     </div>
                     <div class="form-group">
                         <label for="url">URL</label>
-                        <input type="url" name="url" class="form-control" id="url" aria-describedby="shorthandHelp"
+                        <input type="url" name="url" class="form-control" id="url" aria-describedby="urlHelp"
                                placeholder="https://example.com">
-                        <small id="shorthandHelp" class="form-text text-muted">This is where users will be redirected
+                        <small id="urlHelp" class="form-text text-muted">This is where users will be redirected
                             to</small>
                     </div>
                     <button id="create-button" type="button" class="btn btn-primary">Create</button>
@@ -29,7 +29,7 @@
             <div class="row shorthand-row" name="shorthand_row">
                 <div class="col">
                     <div class="card">
-                        <form action="/" method="patch">
+                        <form>
                             <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                             <input type="hidden" name="shorthand_id" value="{{ shorthand.id }}">
                             <div class="card-header">
@@ -37,7 +37,33 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">{{ shorthand.label }} - {{ shorthand.url }}</p>
-                                 <button type="submit" class="btn btn-danger" onclick="delete_shorthand({{ shorthand.id }})">Delete</button>
+                                <div class="container">
+                                    <div class="row">
+                                        <form>
+                                            <div class="col-lg-6">
+                                                <input type="text" name="shorthand" class="form-control"
+                                                       aria-describedby="shorthandHelp"
+                                                       placeholder="Enter shorthand" value="{{ shorthand.label }}">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <input type="url" name="url" class="form-control"
+                                                       aria-describedby="urlHelp"
+                                                       placeholder="https://example.com" value="{{ shorthand.url }}">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-sm-2 mr-auto">
+                                            <button type="button" name="edit-button" class="btn btn-primary" shorthand_id="{{ shorthand.id }}">Save</button>
+                                        </div>
+                                        <div class="col-sm-2 ml-auto">
+                                            <button type="button" class="btn btn-danger"
+                                                    onclick="delete_shorthand({{ shorthand.id }})"><i
+                                                    class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>

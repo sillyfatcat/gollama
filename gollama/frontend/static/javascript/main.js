@@ -26,8 +26,22 @@ function set_event_listener() {
         $("#create-form").validate()
         if ($('#shorthand').valid() && $('#url').valid()) {
             post_shorthand({'label': $('#shorthand').val(), 'url': $('#url').val()}).done(() => {
-                location.reload()
+                window.location = window.location.href.split('#')[0]
             })
+        }
+    })
+
+    $('[name="edit-button"]').on('click', function () {
+        let form = $(this).parentsUntil('form').parent();
+        form.validate()
+        if (form.valid() && form.find('[name="url"]').valid()) {
+            let shorthand = form.find('[name="shorthand"]').val()
+            let url = form.find('[name="url"]').val()
+            console.log(url, shorthand, $(this).attr('shorthand_id'))
+            patch_shorthand($(this).attr('shorthand_id'), {'url': url, 'label': shorthand})
+                .done(() => {
+                    location.reload();
+                })
         }
     })
 }

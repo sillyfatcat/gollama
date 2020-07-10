@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http.response import HttpResponsePermanentRedirect
+from django.http.response import HttpResponseRedirect
 
 from backend.models import ShortHand
 
@@ -30,4 +30,4 @@ def reroute(request, shorthand, parameter=None):
             url = url.format(parameter)
         else:
             url = f'{url.rstrip("/")}/{parameter}'
-    return HttpResponsePermanentRedirect(url)
+    return HttpResponseRedirect(url)
