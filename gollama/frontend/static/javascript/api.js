@@ -41,24 +41,24 @@ const csrftoken = getCookie('csrftoken');
 $.ajaxSetup({
     function(xhr, settings) {
         if (!csrfIgnoreMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader('X-CSRFToken', csrftoken)
+            xhr.setRequestHeader('X-CSRFToken', csrftoken);
         }
     }
-})
+});
 
 function get_shorthands() {
-    return $.get('/api/v1/shorthand/')
+    return $.get('/api/v1/shorthand/');
 }
 
 function post_shorthand(payload) {
-    return $.post('/api/v1/shorthand/', payload)
+    return $.post('/api/v1/shorthand/', payload);
 }
 
 function patch_shorthand(id, payload) {
-    return $.patch(`/api/v1/shorthand/${id}/`, payload)
+    return $.patch(`/api/v1/shorthand/${id}/`, payload);
 }
 
 function delete_shorthand(id) {
-    return $.delete(`/api/v1/shorthand/${id}/`)
+    return $.delete(`/api/v1/shorthand/${id}/`);
 }
 

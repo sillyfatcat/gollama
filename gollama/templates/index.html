@@ -55,12 +55,14 @@
                                     <br/>
                                     <div class="row">
                                         <div class="col-sm-2 mr-auto">
-                                            <button type="button" name="edit-button" class="btn btn-primary" shorthand_id="{{ shorthand.id }}">Save</button>
+                                            <button type="button" name="edit-button" class="btn btn-primary" shorthand_id="{{ shorthand.id }}">
+                                                <i class="fa fa-save" aria-hidden="true"></i>
+                                            </button>
                                         </div>
                                         <div class="col-sm-2 ml-auto">
-                                            <button type="button" class="btn btn-danger"
-                                                    onclick="delete_shorthand({{ shorthand.id }})"><i
-                                                    class="fa fa-trash" aria-hidden="true"></i></button>
+                                            <button type="button" name="delete-button" class="btn btn-danger" data-shorthand-id="{{shorthand.id}}">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -70,6 +72,16 @@
                 </div>
             </div>
         {% endfor %}
+    </div>
+
+    <div class="toast" data-delay="3000">
+        <div class="toast-header">
+            <strong class="mr-auto toast-title">Shorthand Deleted</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body"></div>
     </div>
 
 {% endblock %}
