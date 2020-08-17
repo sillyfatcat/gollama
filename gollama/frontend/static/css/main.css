@@ -122,3 +122,13 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+/*
+ * Toast
+ */
+.toast {
+    color: #6c757d;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
