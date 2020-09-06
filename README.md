@@ -55,6 +55,22 @@ docker-compose build
 docker-compose up
 ``` 
 
+After this, manually connect to the docker container and run the migrate command
+
+Get the Docker ID using this
+
+```bash
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                    NAMES
+5a4954f79b81        gollama_web         "python gollama/mana…"   About a minute ago   Up About a minute   0.0.0.0:8000->8000/tcp   gollama_web_1
+439fe553430b        postgres            "docker-entrypoint.s…"   6 minutes ago        Up About a minute   5432/tcp                 gollama_db_1
+docker exec -t -i 5a4954f79b81 bash
+----
+cd gollama
+python manage.py migrate
+```
+
+
 NOTE: The `docker-compose.yml` is not production ready as it has hardcoded credentials, DO NOT USE THIS FOR PRODUCTION
 
 ## Contributing
