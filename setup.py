@@ -26,6 +26,7 @@ setup(
         'django',
         'djangorestframework',
         'textdistance',
+        'psycopg2-binary',
     ],
     include_package_data=True,
     classifiers=[

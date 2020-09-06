@@ -25,7 +25,7 @@ SECRET_KEY = '9wrd5^!#c^qlrdp68t-$w+kd!3n(swuz4bfd2ig-qserp0l*eg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['go', '127.0.0.2']
+ALLOWED_HOSTS = ['go', '127.0.0.2', 'localhost', ]
 
 
 # Application definition
@@ -76,12 +76,24 @@ WSGI_APPLICATION = 'gollama.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if os.environ.get('DB') == 'POSTGRES':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'db',
+            'PORT': 5432,
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation

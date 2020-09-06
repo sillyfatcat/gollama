@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+#    Change to dynamic creds creation this is fine for local deployment for now
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    environment:
+      - DB=POSTGRES
+    build: .
+    command: python gollama/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "127.0.0.2:80:8000"
+    depends_on:
+      - db
