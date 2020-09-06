@@ -46,6 +46,17 @@ Once this is setup `http://go` should route you to the home dashboard where you 
 
 To  use these links just type `http://go/{SHORTHAND}`
 
+### Docker
+
+If you want to use Docker, you can use the `docker-compose build` to build the docker image
+
+```bash
+docker-compose build
+docker-compose up
+``` 
+
+NOTE: The `docker-compose.yml` is not production ready as it has hardcoded credentials, DO NOT USE THIS FOR PRODUCTION
+
 ## Contributing
 
 Feel free to open any pull requests in the github page, I will review them as they come in. 
