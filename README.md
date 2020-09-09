@@ -66,8 +66,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 439fe553430b        postgres            "docker-entrypoint.s…"   6 minutes ago        Up About a minute   5432/tcp                 gollama_db_1
 docker exec -t -i 5a4954f79b81 bash
 ----
-cd gollama
-python manage.py migrate
+python gollama/manage.py migrate
 ```
 
 
